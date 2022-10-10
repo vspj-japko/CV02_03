@@ -1,7 +1,9 @@
 public class Funkce_Primka extends Funkce {
 
-    private double k;
-    private double q;
+    private final double k;
+    private final double q;
+
+    private final String TYPE = "Primka";
 
     public Funkce_Primka(double k, double q) {
         this.k = k;
@@ -12,17 +14,27 @@ public class Funkce_Primka extends Funkce {
         return this.k * x + this.q;
     }
 
-    public boolean equals(Funkce_Primka primka) {
-        return this.k == primka.k && this.q == primka.q;
+    public String nazev_objektu() {
+        return this.TYPE;
     }
 
-    @Override
+    public boolean equals(Funkce_Primka obj) {
+        return this.k == obj.k && this.q == obj.q;
+    }
+
     public String toString() {
         return "f(x) = " + this.k + "x + " + this.q;
     }
-
-    @Override
-    public String nazev_objektu() {
-        return null;
-    }
 }
+
+/*
+Funkce_Primka : Funkce
+        double k
+        double q
+        String TYPE
+        Funkce_Primka(double k, double q) : constructor
+        double calc_y(double x) : y = kx + q
+        String nazev_objektu() : TYPE
+        boolean equals(Funkce_Primka primka)
+        String toString() : "f(x) = kx + q"
+ */
